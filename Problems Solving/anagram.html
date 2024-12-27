@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagram</title>
+</head>
+
+<body>
+    <script>
+        const findAnagram = (str1, str2) => {
+            const obj1 = {};
+            const obj2 = {};
+
+            if (str1.length !== str2.length) {
+                return false
+            }
+
+            for (const ch of str1) {
+                obj1[ch] = (obj1[ch] || 0) + 1
+            }
+
+            for (const ch of str2) {
+                if (!obj1[ch]) {
+                    return false
+                }
+                obj1[ch]--
+            }
+            return true
+        }
+        console.log(findAnagram('act', 'cat'))
+
+        // for (let i = 0; i < myStr.length; i++) {
+
+        //     if (!obj[myStr[i]]) {
+        //         obj[myStr[i]] = 1
+        //     } else {
+        //         obj[myStr[i]] += 1
+        //     }
+        // }
+
+    </script>
+</body>
+
+</html>

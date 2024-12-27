@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bineary Search</title>
+</head>
+
+<body>
+    <!-- Bineary search use mid point approach,
+      where we will keep matching mid point with our finding element,
+      and our array has to be sorted -->
+
+    <script>
+        const arr = [2, 34, 45, 56, 66, 99];
+        const findEl = 66;
+        let position, start = 0, end = arr.length - 1;
+
+        //   Iterative Approach
+        // while (start <= end) {
+        //     let mid = Math.floor((start + end) / 2);
+
+        //     if (arr[mid] === findEl) {
+        //         position = mid
+        //         break;
+        //     } else if (arr[mid] < findEl) {
+        //         start = mid + 1
+        //     } else {
+        //         end = mid - 1
+        //     }
+        // }
+
+        //   Recursive Approach
+        const recursiveFunction = (data, start, end) => {
+            let mid = Math.floor((start + end) / 2);
+
+            if (data[mid] === findEl) {
+                position = mid
+                return true;
+            } else if (data[mid] < findEl) {
+                recursiveFunction(data, mid + 1, end);
+            } else {
+                recursiveFunction(data, start, mid - 1);
+            }
+        }
+
+        recursiveFunction(arr, start, end)
+        console.log(position)
+
+    </script>
+
+</body>
+
+</html>

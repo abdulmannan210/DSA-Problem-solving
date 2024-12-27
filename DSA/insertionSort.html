@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Sort</title>
+</head>
+
+<body>
+
+    <!-- In insertion We are required two values as we will compare next item by previous item -->
+    <!-- First we will store current item and then store previous index in a variable -->
+    <!-- Our current item will be the next one -->
+    <!-- Our compared value will be previous one -->
+    <!-- If previous item is greater than current/next item then we will swap next one by previous one -->
+    <!-- In the end we will swap previous one by current/next -->
+     <!-- In order to go backward we should alway substract 1 from previous index -->
+
+    <script>
+        const arr = [23, 11, 2, 56, 54, 9]
+        let current, i, j;
+
+        for (i = 1; i < arr.length; i++) {
+            current = arr[i]
+            j = i - 1;
+
+            while (j >= 0 && arr[j] > current) {
+                arr[j + 1] = arr[j];
+                j--
+            }
+            arr[j + 1] = current
+        }
+        console.log(arr)
+    </script>
+
+</body>
+
+</html>

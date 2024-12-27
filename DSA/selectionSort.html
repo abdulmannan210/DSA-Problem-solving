@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort</title>
+</head>
+
+<body>
+
+    <!-- In selection sort we need index of min item -->
+    <!-- By default we will consider first loop index as min id -->
+    <!-- The inner loop will always be started from outer loop index + 1 -->
+    <!-- If item inner loop index is less than outer loop index item then we will swap min index to inner loop index -->
+    <!-- Then we will store min index item in temp and swap it with outer loop index item -->
+     <!-- And outer loop index will be equal to min index item -->
+
+    <script>
+        const arr = [33, 45, 1, 6, 7, 2, 0, 0]
+        let minId;
+
+        for (let i = 0; i < arr.length; i++) {
+            minId = i;
+
+            for (let j = i + 1; j < arr.length; j++) {
+                // DESCENDING ORDER
+                // arr[j] > arr[minId]
+
+                // ASCENDING ORDER
+                if (arr[j] < arr[minId]) {
+                    minId = j
+                }
+            }
+
+            let temp = arr[minId];
+            arr[minId] = arr[i];
+            arr[i] = temp
+        }
+
+        console.log(arr)
+    </script>
+
+</body>
+
+</html>

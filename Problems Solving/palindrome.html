@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+
+<body>
+
+    <script>
+        function findPalindrome(str) {
+            let start = 0;
+            let end = str.length - 1
+            let result = 'String is palindrome';
+
+            while (start < end) {
+                if (str[start] != str[end]) {
+                    result = 'String is not palindrome'
+                }
+                start++
+                end--
+            }
+
+            return result
+        }
+
+        console.log(findPalindrome('level'))
+    </script>
+</body>
+
+</html>

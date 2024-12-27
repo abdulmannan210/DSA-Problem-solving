@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Occuring Character</title>
+</head>
+
+<body>
+
+    <script>
+        const maxOccuringCharacter = (str) => {
+            const obj = {};
+            let maxKey, maxValue;
+
+            for (let i = 0; i < str.length; i++) {
+                let key = str[i]
+                obj[key] = (obj[key] || 0) + 1;
+
+                if (!maxKey || obj[key] > obj[maxKey]) {
+                    maxKey = key;
+                    maxValue = obj[maxKey];
+                }
+
+                // if (!obj[str[i]]) {
+                //     obj[str[i]] = 1
+                // } else {
+                //     obj[str[i]]++
+                // }
+            }
+            return { maxKey, maxValue };
+        }
+
+        console.log(maxOccuringCharacter("hellopeter"))
+    </script>
+
+</body>
+
+</html>
